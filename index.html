@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<meta charset='UTF-8'>
+	<link rel='stylesheet' type='text/css' href='styles.css'>
+	<script>
+		var slideIndex = 0; 
+		function showSlides() 
+		{ 
+		    var i; 
+		  
+		    // get the array of divs' with classname image-sliderfade 
+		    var slides = document.getElementsByClassName("category");  
+		      
+		     
+		  
+		    for (i = 0; i < slides.length; i++) { 
+		        // initially set the display to  
+		        // none for every image. 
+		        slides[i].style.display = "none";  
+		    } 
+		   
+		     // increase by 1, Global variable 
+		    slideIndex++;  
+		   
+		     // check for boundary 
+		    if (slideIndex > slides.length)  
+		    { 
+		        slideIndex = 1; 
+		    } 
+		   
+		    
+		   
+		    slides[slideIndex - 1].style.display = "block"; 		  
+		    // Change image every 2 seconds 
+		    setTimeout(showSlides, 2000);  
+		}
+
+		function showDetails()
+		{
+			document.getElementById("contentwriting").src= 'content_writing.jpg';
+			document.getElementById("digitalmarketing").src= 'digital_marketing.jpg';
+			document.getElementById("foodreceipes").src= 'food_recipe.jpg';
+			document.getElementById("graphicdesign").src= 'graphic_designing.jpg';
+			document.getElementById("health").src= 'life.jpg';
+			document.getElementById("tictoc").src= 'tiktok.jpg';
+		}
+
+		function showOriginal()
+		{
+			document.getElementById("contentwriting").src= 'contentwriting.jpg';
+			document.getElementById("digitalmarketing").src= 'digitalmarketing.jpg';
+			document.getElementById("foodreceipes").src= 'foodreceipes.jpg';
+			document.getElementById("graphicdesign").src= 'graphicdesign.jpg';
+			document.getElementById("health").src= 'health.jpg';
+			document.getElementById("tictoc").src= 'tictoc.png';
+		}
+	</script>
+</head>
+<body onload="showSlides()">
+	<div class='bg'>
+		<div class='maincontainer'>
+
+
+			<div class='about'>
+				<div class='aboutus'>
+					<div class='logo_container'>
+						<img  src='freelancemantra_logo.jpg' class='logo'>
+					</div>
+					<div class='aboutusdesc'>
+						<h2>About Us</h2>
+						<p>Are you a freelancer or own a business? Reach to more people & get more customers for your business. 
+						Post your requirements & get work completed by freelancers. Join Freelance Mantra.</p>
+					</div>
+				</div>
+				<div class='categories' >
+					<div class='category'>
+						<a href='#'>
+							<img id="contentwriting" onmouseover="showDetails()" onmouseout="showOriginal()" src='contentwriting.jpg'>
+						</a>
+					</div>
+					<div class='category'>
+						<a href='#'>
+							<img id="digitalmarketing" onmouseover="showDetails()" onmouseout="showOriginal()" src='digitalmarketing.jpg'>
+						</a>
+					</div>
+					<div class='category'>
+						<a href='#'>
+							<img id="foodreceipes" onmouseover="showDetails()" onmouseout="showOriginal()" src='foodreceipes.jpg'>
+						</a>
+					</div>
+					<div class='category'>
+						<a href='#'>
+							<img id="graphicdesign" onmouseover="showDetails()" onmouseout="showOriginal()" src='graphicdesign.jpg'>
+						</a>
+					</div>
+					<div class='category'>
+						<a href='#'>
+							<img id="health" onmouseover="showDetails()" onmouseout="showOriginal()" src='health.jpg'>
+						</a>
+					</div>
+					<div class='category'>
+						<a href='#'>
+							<img id="tictoc" onmouseover="showDetails()" onmouseout="showOriginal()" src='tictoc.png'>
+						</a>
+					</div>
+				</div>
+				
+			</div>
+
+
+			<div class='login'>
+				<img src='avatar.svg' class='avatar'>
+				<h1>Login</h1>
+				<form action="login.php" method="POST">
+					<p>Username</p><input type="text" name="username" placeholder="Enter Username" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Username'">
+					<p>Password</p><input type="password" name="password" placeholder="Enter Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Password'">
+					<a href="#">Forgot password?</a>
+					<input type="submit" name="" value="Login">
+					<a href="#">Don't have an account?</a>
+				</form>	
+			</div>
+		</div>
+	</div>
+</body>
+</html>
